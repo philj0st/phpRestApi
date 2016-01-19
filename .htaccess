@@ -1,0 +1,7 @@
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+#rewrites request if requested file or directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*)  requesthandler.php [QSA]
